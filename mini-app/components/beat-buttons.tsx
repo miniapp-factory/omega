@@ -5,53 +5,59 @@ import { useState } from "react";
 
 export default function BeatButtons() {
   const [selected, setSelected] = useState<number[]>([]);
+  const [composition, setComposition] = useState<string>("");
   const labels = [
-    "ƒ",   // Function / Foundation
-    "∑",   // Loop / Action
-    "⌘",   // Command / Accessory
-    "⚙",   // Settings / Control
-    "⏸",   // Pause / Debug
-    "↩",   // Reset / Clear
+    "ƒ",   // Kick/Bass Drum
+    "∑",   // Snare/Rhythm
+    "⌘",   // Hi‑Hat/Effect
+    "⚙",   // Reset/Clear
   ];
 
   const playBeat = (index: number) => {
     console.log(`Playing beat ${index + 1}`);
   };
 
-  const combineBeats = (first: number, second: number) => {
-    console.log(`Combining beats ${first + 1} and ${second + 1}`);
-    // TODO: implement actual mixing logic and minting
+  // Placeholder audio files located in /public
+  const audioMap: Record<number, string> = {
+    0: "/kick.mp3",
+    1: "/snare.mp3",
+    2: "/hihat.mp3",
   };
-
-  const handleClick = (index: number) => {
-    if (selected.length === 0) {
-      setSelected([index]);
-      playBeat(index);
-    } else if (selected.length === 1 && selected[0] !== index) {
-      combineBeats(selected[0], index);
-      setSelected([]);
-    } else {
-      // clicking the same beat again resets selection
-      setSelected([]);
+  const playBeat = (index: number) => {
+    const src = audioMap[index];
+    if (src) {
+      const audio = new Audio(src);
+      audio.play();
     }
   };
 
+  const handleClick = (index: number) => {
+    if (index === 3) { // Reset/Clear button
+      setComposition("");
+      setSelected([]);
+      return;
+    }
+    setSelected([index]);
+    playBeat(index);
+    setComposition(prev => prev + labels[index] + " ");
+  };
+
   return (
-    <div>
-      <div className="bg-gray-900 text-green-400 p-4 rounded mb-4 w-full">
-        Selected beats: {selected.map(i => labels[i]).join(', ')}
+    <div className="flex flex-col h-full">
+      <div className="bg-gray-900 text-green-400 p-4 rounded mb-4 w-full h-3/5 overflow-auto font-mono">
+        {composition || <span className="text-gray-500">No beats yet.</span>}
       </div>
-      <div className="grid grid-cols-3 gap-2">
-      {[...Array(6)].map((_, i) => (
-        <Button
-          key={i}
-          variant={selected.includes(i) ? "secondary" : "outline"}
-          onClick={() => handleClick(i)}
-        >
-          {labels[i]}
-        </Button>
-      ))}
-    </div>
+      <div className="grid grid-cols-4 gap-2 h-2/5">
+        {[...Array(4)].map((_, i) => (
+          <Button
+            key={i}
+            variant={selected.includes(i) ? "secondary" : "outline"}
+            onClick={() => handleClick(i)}
+          >
+            {labels[i]}
+          </Button>
+        ))}
+      </div>
     </div>
   );
 }
