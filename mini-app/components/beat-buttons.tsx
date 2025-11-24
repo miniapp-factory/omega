@@ -72,7 +72,7 @@ export default function BeatButtons() {
       </div>
       <div className="mt-4 flex justify-center">
         <Button
-          variant="primary"
+          variant="default"
           onClick={handleExecute}
           disabled={isPlaying || !composition.trim()}
         >
