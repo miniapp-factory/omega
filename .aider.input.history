@@ -88,3 +88,53 @@
 +
 +
 +the app looks like a terminal window (dark background, light green/white monospace text) or a circuit board (green/gold lines, glowing lights).
+
+# 2025-11-24 16:23:48.817901
++"Code Composer"(Title of the app) a music game where theres buttons which are coding symbols/logo that when it is picked, it will then display in a window(Terminal/Command prompt) and then each button has a designated beat or tune, and users will then combine and compose beats over the window:
++
++
++
++Buttons:
++
++The Foundation (Kick/Bass) - A deep, solid, rhythmic thump that sets the pace—like a core library or main loop. - (Button Labels/Logo Function, Core Loop, Main Thread)
++
++
++
++The Action (Snare/Rhythm) - A crisp, medium-pitched sound that provides the driving rhythm—like executing a command. -(Button Labels/Logo Execute, Run Test, Push Commit)
++
++
++
++The Accessory (Hi-Hat/Effect) - A light, rapid, high-pitched effect that adds detail and texture—like a small, frequent action or notification. - (Button Labels/Logo Console.log, Error Beep, Save File)
++
++
++
++The Control - A sound that changes the current state or clears everything. - (Button Labels/Logo Debugger (to pause), Reset (to clear the mix))
++
++
++
++the app looks like a terminal window (dark background, light green/white monospace text) or a circuit board (green/gold lines, glowing lights).
+
+# 2025-11-24 16:23:48.819397
++"Code Composer"(Title of the app) a music game where theres buttons which are coding symbols/logo that when it is picked, it will then display in a window(Terminal/Command prompt) and then each button has a designated beat or tune, and users will then combine and compose beats over the window:
++
++
++
++Buttons:
++
++The Foundation (Kick/Bass) - A deep, solid, rhythmic thump that sets the pace—like a core library or main loop. - (Button Labels/Logo Function, Core Loop, Main Thread)
++
++
++
++The Action (Snare/Rhythm) - A crisp, medium-pitched sound that provides the driving rhythm—like executing a command. -(Button Labels/Logo Execute, Run Test, Push Commit)
++
++
++
++The Accessory (Hi-Hat/Effect) - A light, rapid, high-pitched effect that adds detail and texture—like a small, frequent action or notification. - (Button Labels/Logo Console.log, Error Beep, Save File)
++
++
++
++The Control - A sound that changes the current state or clears everything. - (Button Labels/Logo Debugger (to pause), Reset (to clear the mix))
++
++
++
++the app looks like a terminal window (dark background, light green/white monospace text) or a circuit board (green/gold lines, glowing lights).
