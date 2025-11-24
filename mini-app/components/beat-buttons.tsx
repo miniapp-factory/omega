@@ -38,7 +38,7 @@ export default function BeatButtons() {
 
   return (
     <div>
-      <div className="bg-gray-800 text-green-400 p-2 rounded mb-2">
+      <div className="bg-gray-900 text-green-400 p-4 rounded mb-4 w-full">
         Selected beats: {selected.map(i => labels[i]).join(', ')}
       </div>
       <div className="grid grid-cols-3 gap-2">
