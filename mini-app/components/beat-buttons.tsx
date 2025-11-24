@@ -70,6 +70,15 @@ export default function BeatButtons() {
           </Button>
         ))}
       </div>
+      <div className="mt-4 flex justify-center">
+        <Button
+          variant="primary"
+          onClick={handleExecute}
+          disabled={isPlaying || !composition.trim()}
+        >
+          Execute
+        </Button>
+      </div>
     </div>
   );
 }
