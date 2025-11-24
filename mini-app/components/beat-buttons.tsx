@@ -13,9 +13,6 @@ export default function BeatButtons() {
     "⚙",   // Reset/Clear
   ];
 
-  const playBeat = (index: number) => {
-    console.log(`Playing beat ${index + 1}`);
-  };
 
   // Placeholder audio files located in /public
   const audioMap: Record<number, string> = {
