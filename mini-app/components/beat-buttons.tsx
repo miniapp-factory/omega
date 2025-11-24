@@ -8,10 +8,10 @@ export default function BeatButtons() {
   const [composition, setComposition] = useState<string>("");
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const labels = [
-    "ƒ",   // Kick/Bass Drum
-    "∑",   // Snare/Rhythm
-    "⌘",   // Hi‑Hat/Effect
-    "⚙",   // Reset/Clear
+    "{",   // Kick/Bass Drum
+    ";",   // Snare/Rhythm
+    "//",   // Hi‑Hat/Effect
+    "!",   // Reset/Clear
   ];
 
 
@@ -36,7 +36,6 @@ export default function BeatButtons() {
       return;
     }
     setSelected([index]);
-    playBeat(index);
     setComposition(prev => prev + labels[index] + " ");
   };
 
@@ -73,10 +72,11 @@ export default function BeatButtons() {
       <div className="mt-4 flex justify-center">
         <Button
           variant="default"
+          className="w-full h-12"
           onClick={handleExecute}
           disabled={isPlaying || !composition.trim()}
         >
-          Execute
+          RUN
         </Button>
       </div>
     </div>
