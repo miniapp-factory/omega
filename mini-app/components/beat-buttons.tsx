@@ -6,12 +6,12 @@ import { useState } from "react";
 export default function BeatButtons() {
   const [selected, setSelected] = useState<number[]>([]);
   const labels = [
-    "Foundation",
-    "Action",
-    "Accessory",
-    "Control",
-    "Debug",
-    "Reset",
+    "ƒ",   // Function / Foundation
+    "∑",   // Loop / Action
+    "⌘",   // Command / Accessory
+    "⚙",   // Settings / Control
+    "⏸",   // Pause / Debug
+    "↩",   // Reset / Clear
   ];
 
   const playBeat = (index: number) => {
