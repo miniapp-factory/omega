@@ -10,8 +10,8 @@ export default function BeatButtons() {
     "Action",
     "Accessory",
     "Control",
-    "Effect 5",
-    "Effect 6",
+    "Debug",
+    "Reset",
   ];
 
   const playBeat = (index: number) => {
@@ -37,7 +37,11 @@ export default function BeatButtons() {
   };
 
   return (
-    <div className="grid grid-cols-3 gap-2">
+    <div>
+      <div className="bg-gray-800 text-green-400 p-2 rounded mb-2">
+        Selected beats: {selected.map(i => labels[i]).join(', ')}
+      </div>
+      <div className="grid grid-cols-3 gap-2">
       {[...Array(6)].map((_, i) => (
         <Button
           key={i}
@@ -47,6 +51,7 @@ export default function BeatButtons() {
           {labels[i]}
         </Button>
       ))}
+    </div>
     </div>
   );
 }

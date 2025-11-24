@@ -1,3 +1,3 @@
-export const title = "Mix Master";
-export const description = "A minimal, click‑to‑combine beat mixer that mints a unique Mix Master ERC‑1155 NFT on Base.";
+export const title = "Code Composer";
+export const description = "A music game where coding symbols trigger beats that can be combined and composed in a terminal-like interface.";
 export const url = process.env.NEXT_PUBLIC_URL;
