@@ -4,12 +4,28 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
 export default function BeatButtons() {
-  const [active, setActive] = useState<number | null>(null);
+  const [selected, setSelected] = useState<number[]>([]);
+
+  const playBeat = (index: number) => {
+    console.log(`Playing beat ${index + 1}`);
+  };
+
+  const combineBeats = (first: number, second: number) => {
+    console.log(`Combining beats ${first + 1} and ${second + 1}`);
+    // TODO: implement actual mixing logic and minting
+  };
 
   const handleClick = (index: number) => {
-    setActive(index);
-    // placeholder for playing beat
-    console.log(`Playing beat ${index + 1}`);
+    if (selected.length === 0) {
+      setSelected([index]);
+      playBeat(index);
+    } else if (selected.length === 1 && selected[0] !== index) {
+      combineBeats(selected[0], index);
+      setSelected([]);
+    } else {
+      // clicking the same beat again resets selection
+      setSelected([]);
+    }
   };
 
   return (
@@ -17,7 +33,7 @@ export default function BeatButtons() {
       {[...Array(6)].map((_, i) => (
         <Button
           key={i}
-          variant={active === i ? "secondary" : "outline"}
+          variant={selected.includes(i) ? "secondary" : "outline"}
           onClick={() => handleClick(i)}
         >
           Beat {i + 1}
