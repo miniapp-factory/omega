@@ -6,6 +6,7 @@ import { useState } from "react";
 export default function BeatButtons() {
   const [selected, setSelected] = useState<number[]>([]);
   const [composition, setComposition] = useState<string>("");
+  const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const labels = [
     "ƒ",   // Kick/Bass Drum
     "∑",   // Snare/Rhythm
@@ -37,6 +38,20 @@ export default function BeatButtons() {
     setSelected([index]);
     playBeat(index);
     setComposition(prev => prev + labels[index] + " ");
+  };
+
+  const handleExecute = async () => {
+    if (isPlaying || !composition.trim()) return;
+    setIsPlaying(true);
+    const symbols = composition.trim().split(/\s+/);
+    for (const sym of symbols) {
+      const idx = labels.indexOf(sym);
+      if (idx !== -1) {
+        playBeat(idx);
+        await new Promise(res => setTimeout(res, 600)); // 600ms between beats
+      }
+    }
+    setIsPlaying(false);
   };
 
   return (
