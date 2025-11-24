@@ -5,6 +5,14 @@ import { useState } from "react";
 
 export default function BeatButtons() {
   const [selected, setSelected] = useState<number[]>([]);
+  const labels = [
+    "Foundation",
+    "Action",
+    "Accessory",
+    "Control",
+    "Effect 5",
+    "Effect 6",
+  ];
 
   const playBeat = (index: number) => {
     console.log(`Playing beat ${index + 1}`);
@@ -36,7 +44,7 @@ export default function BeatButtons() {
           variant={selected.includes(i) ? "secondary" : "outline"}
           onClick={() => handleClick(i)}
         >
-          Beat {i + 1}
+          {labels[i]}
         </Button>
       ))}
     </div>
