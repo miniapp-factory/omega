@@ -64,6 +64,12 @@ export default function BeatButtons() {
     setIsPlaying(false);
   };
 
+  const repeatOnce = async () => {
+    if (isPlaying || !composition.trim()) return;
+    await handleExecute();
+    await handleExecute();
+  };
+
   return (
     <div className="flex flex-col h-full">
       <div className="bg-black text-green-400 p-4 rounded mt-16 mb-4 w-full h-[60vh] overflow-auto font-mono whitespace-pre-wrap">
@@ -87,6 +93,14 @@ export default function BeatButtons() {
           disabled={isPlaying || !composition.trim()}
         >
           {'>'}
+        </Button>
+        <Button
+          variant="outline"
+          className="border-emerald-600 bg-black w-10 h-10"
+          onClick={repeatOnce}
+          disabled={isPlaying || !composition.trim()}
+        >
+          Loop
         </Button>
       </div>
     </div>
