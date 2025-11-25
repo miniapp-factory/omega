@@ -99,19 +99,19 @@ export default function BeatButtons() {
           >
             {labels[i]}
           </Button>
-          <Button
-            variant="outline"
-            className="border-emerald-600 bg-black w-10 h-10"
-            onClick={() => {
-              setComposition("");
-              setSelected([]);
-              setIsLooping(false);
-            }}
-            disabled={isPlaying}
-          >
-            Erase
-          </Button>
         ))}
+        <Button
+          variant="outline"
+          className="border-emerald-600 bg-black w-10 h-10"
+          onClick={() => {
+            setComposition("");
+            setSelected([]);
+            setIsLooping(false);
+          }}
+          disabled={isPlaying}
+        >
+          Erase
+        </Button>
         <Button
           variant="default"
           className="border-emerald-600 bg-black w-10 h-10"
