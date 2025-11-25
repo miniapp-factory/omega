@@ -17,9 +17,9 @@ export default function BeatButtons() {
 
   // Placeholder audio files located in /public
   const audioMap: Record<number, string> = {
-    0: "/kick.mp3",
-    1: "/snare.mp3",
-    2: "/hihat.mp3",
+    0: "https://s3.amazonaws.com/freecodecamp/drums/Punchy_Kick_1.mp3",
+    1: "https://s3.amazonaws.com/freecodecamp/drums/Brk_Snr.mp3",
+    2: "https://s3.amazonaws.com/freecodecamp/drums/Give_us_a_light.mp3",
   };
   const playBeat = (index: number) => {
     const src = audioMap[index];
