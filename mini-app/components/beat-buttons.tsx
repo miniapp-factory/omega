@@ -53,7 +53,7 @@ export default function BeatButtons() {
   const handleExecute = async () => {
     if (isPlaying || !composition.trim()) return;
     setIsPlaying(true);
-    const symbols = composition.trim().split(/\s+/);
+    const symbols = composition.trim().match(/(\{|\;|\/\/|!)/g) ?? [];
     for (const sym of symbols) {
       const idx = labels.indexOf(sym);
       if (idx !== -1) {
