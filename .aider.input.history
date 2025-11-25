@@ -470,3 +470,17 @@
 +make the loop button be a toggle button
 +Make the "!" button be a clap.mp3 beat
 +
+
+# 2025-11-25 14:07:52.731284
++when the ! button is clicked it will display in the terminal and will play the clap.mp3 beat 
++
++when the loop button is on, it will repeat infinitely and to turn off the loop you must toggle it back off.
++ 
++
+
+# 2025-11-25 14:07:52.733628
++when the ! button is clicked it will display in the terminal and will play the clap.mp3 beat 
++
++when the loop button is on, it will repeat infinitely and to turn off the loop you must toggle it back off.
++ 
++
