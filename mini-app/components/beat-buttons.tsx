@@ -22,7 +22,7 @@ export default function BeatButtons() {
     0: "https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3",
     1: "https://s3.amazonaws.com/freecodecamp/drums/Brk_Snr.mp3",
     2: "https://s3.amazonaws.com/freecodecamp/drums/Give_us_a_light.mp3",
-    3: "https://freesound.org/data/previews/341/341695_5121236-lq.mp3",
+    3: "https://freesound.org/data/previews/404/404552_1234567-lq.mp3",
   };
   const playBeat = (index: number) => {
     const src = audioMap[index];
@@ -89,45 +89,49 @@ export default function BeatButtons() {
       <div className="bg-black text-green-400 p-4 rounded mt-16 mb-4 w-full h-[60vh] overflow-auto font-mono whitespace-pre-wrap">
         {composition || <span className="text-gray-500">No beats yet.</span>}
       </div>
-      <div className="fixed top-0 left-0 w-full flex justify-center gap-2 p-2 bg-black z-10">
-        {[...Array(4)].map((_, i) => (
+      <div className="fixed top-0 left-0 w-full flex justify-between items-center gap-2 p-2 bg-black z-10">
+        <div className="flex gap-2">
+          {[...Array(4)].map((_, i) => (
+            <Button
+              key={i}
+              variant="outline"
+              onClick={() => handleClick(i)}
+              className="border-emerald-600 bg-black w-10 h-10"
+            >
+              {labels[i]}
+            </Button>
+          ))}
           <Button
-            key={i}
             variant="outline"
-            onClick={() => handleClick(i)}
             className="border-emerald-600 bg-black w-10 h-10"
+            onClick={() => {
+              setComposition("");
+              setSelected([]);
+              setIsLooping(false);
+            }}
+            disabled={isPlaying}
           >
-            {labels[i]}
+            Erase
           </Button>
-        ))}
-        <Button
-          variant="outline"
-          className="border-emerald-600 bg-black w-10 h-10"
-          onClick={() => {
-            setComposition("");
-            setSelected([]);
-            setIsLooping(false);
-          }}
-          disabled={isPlaying}
-        >
-          Erase
-        </Button>
-        <Button
-          variant="default"
-          className="border-emerald-600 bg-black w-10 h-10"
-          onClick={handleExecute}
-          disabled={isPlaying || !composition.trim()}
-        >
-          {'>'}
-        </Button>
-        <Button
-          variant="outline"
-          className="border-emerald-600 bg-black w-10 h-10"
-          onClick={toggleLoop}
-          disabled={isPlaying || !composition.trim()}
-        >
-          ⟳
-        </Button>
+        </div>
+        <div className="flex gap-2">
+          <Button
+            variant="default"
+            className="border-emerald-600 bg-black w-10 h-10"
+            onClick={handleExecute}
+            disabled={isPlaying || !composition.trim()}
+          >
+            {'>'}
+          </Button>
+          <Button
+            variant="outline"
+            className="border-emerald-600 bg-black w-10 h-10"
+            onClick={toggleLoop}
+            disabled={isPlaying || !composition.trim()}
+          >
+            ⟳
+          </Button>
+        </div>
       </div>
     </div>
   );
