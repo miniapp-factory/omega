@@ -74,10 +74,13 @@ export default function BeatButtons() {
     loopPlay();
   };
 
-  const repeatOnce = async () => {
-    if (isPlaying || !composition.trim()) return;
-    setIsLooping(true);
-    loopPlay();
+  const toggleLoop = () => {
+    if (isLooping) {
+      setIsLooping(false);
+    } else {
+      setIsLooping(true);
+      loopPlay();
+    }
   };
 
   return (
@@ -105,9 +108,9 @@ export default function BeatButtons() {
           {'>'}
         </Button>
         <Button
-          variant="outline"
+          variant={isLooping ? "secondary" : "outline"}
           className="border-emerald-600 bg-black w-10 h-10"
-          onClick={repeatOnce}
+          onClick={toggleLoop}
           disabled={isPlaying || !composition.trim()}
         >
           ⟳
