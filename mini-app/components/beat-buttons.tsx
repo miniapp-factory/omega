@@ -93,11 +93,23 @@ export default function BeatButtons() {
         {[...Array(4)].map((_, i) => (
           <Button
             key={i}
-            variant={selected.includes(i) ? "secondary" : "outline"}
+            variant="outline"
             onClick={() => handleClick(i)}
             className="border-emerald-600 bg-black w-10 h-10"
           >
             {labels[i]}
+          </Button>
+          <Button
+            variant="outline"
+            className="border-emerald-600 bg-black w-10 h-10"
+            onClick={() => {
+              setComposition("");
+              setSelected([]);
+              setIsLooping(false);
+            }}
+            disabled={isPlaying}
+          >
+            Erase
           </Button>
         ))}
         <Button
@@ -109,7 +121,7 @@ export default function BeatButtons() {
           {'>'}
         </Button>
         <Button
-          variant={isLooping ? "secondary" : "outline"}
+          variant="outline"
           className="border-emerald-600 bg-black w-10 h-10"
           onClick={toggleLoop}
           disabled={isPlaying || !composition.trim()}
