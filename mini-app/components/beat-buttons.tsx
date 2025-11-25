@@ -40,6 +40,7 @@ export default function BeatButtons() {
       // Play clap sound
       playBeat(3);
       setSelected([index]);
+      setComposition(prev => prev + labels[index]); // added to display in terminal
       return;
     }
     // Pre‑initialize audio for the first user click on a symbol button
