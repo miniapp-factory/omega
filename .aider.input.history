@@ -300,3 +300,29 @@
 +{ (Kick) beat: Use the file at https://s3.amazonaws.com/freecodecamp/drums/D4_Kick_1.mp3
 +
 +Confirm Other Audio: Ensure the logic remains intact for the ; (Snare) and // (Hi-Hat) beats using their previously assigned URLs.
+
+# 2025-11-25 00:30:35.520186
++Visual Fixes:
++
++Enforce 100% Height/Width: Adjust the main container to ensure it takes up the full viewport height (h-screen).
++
++Improve Terminal Aesthetic: Change the button styles to use a solid emerald border and a truly dark background to emphasize the CMD look.
++
++Audio Fixes (Highest Priority):
++
++Kick Beat URL Tweak: I will revert the Kick URL one last time to a highly common and reliable drum machine sample that is less likely to have encoding or CORS issues: https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3.
++
++Pre-Play Strategy: I will add a pre-play function linked to the first user click ({, ;, //) to initialize all audio contexts. This is a common pattern to bypass mobile/browser restrictions that prevent audio from playing unless a direct user action triggers it first.
+
+# 2025-11-25 00:30:35.520787
++Visual Fixes:
++
++Enforce 100% Height/Width: Adjust the main container to ensure it takes up the full viewport height (h-screen).
++
++Improve Terminal Aesthetic: Change the button styles to use a solid emerald border and a truly dark background to emphasize the CMD look.
++
++Audio Fixes (Highest Priority):
++
++Kick Beat URL Tweak: I will revert the Kick URL one last time to a highly common and reliable drum machine sample that is less likely to have encoding or CORS issues: https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3.
++
++Pre-Play Strategy: I will add a pre-play function linked to the first user click ({, ;, //) to initialize all audio contexts. This is a common pattern to bypass mobile/browser restrictions that prevent audio from playing unless a direct user action triggers it first.
