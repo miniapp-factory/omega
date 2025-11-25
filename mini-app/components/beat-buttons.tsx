@@ -7,6 +7,7 @@ export default function BeatButtons() {
   const [selected, setSelected] = useState<number[]>([]);
   const [composition, setComposition] = useState<string>("");
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
+  const [isLooping, setIsLooping] = useState<boolean>(false);
   const audioElements = useRef<Record<number, HTMLAudioElement>>({});
   const labels = [
     "{",   // Kick/Bass Drum
@@ -37,6 +38,7 @@ export default function BeatButtons() {
     if (index === 3) { // Reset/Clear button
       setComposition("");
       setSelected([]);
+      setIsLooping(false);
       return;
     }
     // Pre‑initialize audio for the first user click on a symbol button
@@ -64,10 +66,16 @@ export default function BeatButtons() {
     setIsPlaying(false);
   };
 
+  const loopPlay = async () => {
+    if (!isLooping) return;
+    await handleExecute();
+    loopPlay();
+  };
+
   const repeatOnce = async () => {
     if (isPlaying || !composition.trim()) return;
-    await handleExecute();
-    await handleExecute();
+    setIsLooping(true);
+    loopPlay();
   };
 
   return (
