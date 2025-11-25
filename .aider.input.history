@@ -364,3 +364,13 @@
 # 2025-11-25 11:17:06.415615
 +instead of a resume logo of run button can you switch it to a ">" and make it in line with the other buttons?
 + 
+
+# 2025-11-25 11:46:36.552530
++i want the run button (>) to be in line with the other buttons at the top.
++
++Prioritize Literal Beat Input: The system's input parser must be updated to prioritize the literal interpretation of the single brace character { as a Kick Beat command. Disable Special Tag Recognition: The sequence of multiple, adjacent { characters (e.g., {{, {{{, etc.) must not be interpreted as the start or end of any special command, group, template tag, or structural element. Required Behavior: Entering N number of adjacent curly braces ({...}) must always result in N individual kick beats being played consecutively. Goal: Entering five adjacent braces ({{{{{) must produce five distinct kick beats.
+
+# 2025-11-25 11:46:36.552998
++i want the run button (>) to be in line with the other buttons at the top.
++
++Prioritize Literal Beat Input: The system's input parser must be updated to prioritize the literal interpretation of the single brace character { as a Kick Beat command. Disable Special Tag Recognition: The sequence of multiple, adjacent { characters (e.g., {{, {{{, etc.) must not be interpreted as the start or end of any special command, group, template tag, or structural element. Required Behavior: Entering N number of adjacent curly braces ({...}) must always result in N individual kick beats being played consecutively. Goal: Entering five adjacent braces ({{{{{) must produce five distinct kick beats.
