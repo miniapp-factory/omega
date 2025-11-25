@@ -262,3 +262,41 @@
 
 # 2025-11-25 00:05:58.565462
 +1. 🎨 Visuals and Layout (High Priority)App Title: "Code Composer"Theme: Strict CMD/Terminal aesthetic. Dark background, all text/symbols must be monochromatic light green or bright white monospace font.Layout:Composition Window (Terminal): Must occupy the top 60% of the screen. This is a large, read-only text area where the symbols are appended.Control Area (Buttons): Must be placed below the Composition Window, occupying the bottom 40%.2. 🎛️ Elements and Text Logic (Medium Priority)Create five primary buttons in the Control Area.Define the four Input Buttons (their label is the symbol to be used in the terminal):Button NameSymbol/CodeBeat TypeAction on ClickKick{Kick/Bass DrumAppend the symbol ($\{$) to the Composition Window. DO NOT play sound.Snare;Snare/RhythmAppend the symbol (;) to the Composition Window. DO NOT play sound.Hi-Hat//Hi-Hat/EffectAppend the symbol (//) to the Composition Window. DO NOT play sound.Reset!N/AClear all content from the Composition Window. DO NOT play sound.Create one large Execute Button labeled "RUN".3. 🔊 Audio Logic (Critical Priority)The Execute Button must be programmed with the following sequential playback logic and specific audio file URLs:Execute Button Action: When the "RUN" button is clicked:The app must read the entire sequence of symbols (${,  ;, //`) currently in the Composition Window.The app must then play the corresponding beat for each symbol sequentially (one after the other, not all at once).Audio File Mapping:{ (Kick) beat: Use the file at https://s3.amazonaws.com/freecodecamp/drums/Punchy_Kick_1.mp3; (Snare) beat: Use the file at https://s3.amazonaws.com/freecodecamp/drums/Brk_Snr.mp3// (Hi-Hat) beat: Use the file at https://s3.amazonaws.com/freecodecamp/drums/Give_us_a_light.mp3
+
+# 2025-11-25 00:17:34.651084
++1. 🎨 Visuals and Layout FIX (Critical CSS/Styling Changes)
++Fix Layout Positioning: Ensure the layout percentages are strictly adhered to: The Composition Window (Terminal) must occupy the top 60% of the screen, and the Control Area (Buttons) must occupy the bottom 40%. Do not center the entire application; ensure the elements are positioned to fill their designated areas vertically.
++
++Fix Terminal Display: The text in the Composition Window is stretching and bunching up.
++
++Height Fix: The Composition Window must be a large, fixed-height area (60% of viewport height) with a scrollbar if the content exceeds the height.
++
++Text Style Fix: Crucially, enforce a standard monospace font for all text within the Composition Window to prevent stretching and align the characters cleanly, maintaining the CMD/Terminal look.
++
++2. 🔊 Audio Logic FIX (Targeting Kick Beat)
++Kick Beat Review: The audio for the { (Kick/Bass Drum) beat is not playing. Review the code for this symbol's playback logic.
++
++New Kick Beat URL: To resolve any issue with the previous file, update the MP3 URL for the { (Kick) beat to a reliable alternative:
++
++{ (Kick) beat: Use the file at https://s3.amazonaws.com/freecodecamp/drums/D4_Kick_1.mp3
++
++Confirm Other Audio: Ensure the logic remains intact for the ; (Snare) and // (Hi-Hat) beats using their previously assigned URLs.
+
+# 2025-11-25 00:17:34.651502
++1. 🎨 Visuals and Layout FIX (Critical CSS/Styling Changes)
++Fix Layout Positioning: Ensure the layout percentages are strictly adhered to: The Composition Window (Terminal) must occupy the top 60% of the screen, and the Control Area (Buttons) must occupy the bottom 40%. Do not center the entire application; ensure the elements are positioned to fill their designated areas vertically.
++
++Fix Terminal Display: The text in the Composition Window is stretching and bunching up.
++
++Height Fix: The Composition Window must be a large, fixed-height area (60% of viewport height) with a scrollbar if the content exceeds the height.
++
++Text Style Fix: Crucially, enforce a standard monospace font for all text within the Composition Window to prevent stretching and align the characters cleanly, maintaining the CMD/Terminal look.
++
++2. 🔊 Audio Logic FIX (Targeting Kick Beat)
++Kick Beat Review: The audio for the { (Kick/Bass Drum) beat is not playing. Review the code for this symbol's playback logic.
++
++New Kick Beat URL: To resolve any issue with the previous file, update the MP3 URL for the { (Kick) beat to a reliable alternative:
++
++{ (Kick) beat: Use the file at https://s3.amazonaws.com/freecodecamp/drums/D4_Kick_1.mp3
++
++Confirm Other Audio: Ensure the logic remains intact for the ; (Snare) and // (Hi-Hat) beats using their previously assigned URLs.
