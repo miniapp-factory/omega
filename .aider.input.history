@@ -414,3 +414,9 @@
 
 # 2025-11-25 12:19:54.136065
 +Beat Engine Core Functionality FixThere is a critical issue where adjacent curly braces are incorrectly consumed by the parser as structural tags instead of literal beat inputs.ParameterRequired BehaviorRationaleBeat Command CharacterThe single curly brace { must be defined as the "Kick Beat" command.Maintains the current input method.Parsing RuleThe system must implement a parser update or pre-processor that treats every adjacent { as a separate, distinct Kick Beat command.Fixes the bug where input like {{{{{ incorrectly yields only 3 beats.Control Tag ConflictThe system must stop interpreting {{ or {{{ as the start or end of any special command, group, template tag, or structural element.Ensures that the beat command is prioritized over any internal template or grouping syntax.Required OutcomeEntering $N$ number of adjacent curly braces ({...}) must always result in $N$ individual kick beats being played consecutively.Guarantees reliable, predictable input for beat creation.
+
+# 2025-11-25 12:30:14.552562
++now i want a loop button that repeats the beats
+
+# 2025-11-25 12:30:14.552944
++now i want a loop button that repeats the beats
