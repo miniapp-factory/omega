@@ -100,7 +100,7 @@ export default function BeatButtons() {
           onClick={repeatOnce}
           disabled={isPlaying || !composition.trim()}
         >
-          Loop
+          ⟳
         </Button>
       </div>
     </div>
