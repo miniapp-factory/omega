@@ -80,8 +80,6 @@ export default function BeatButtons() {
             {labels[i]}
           </Button>
         ))}
-      </div>
-      <div className="mt-4 flex justify-center">
         <Button
           variant="default"
           className="border-emerald-600 bg-black w-10 h-10"
