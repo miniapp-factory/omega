@@ -484,3 +484,27 @@
 +when the loop button is on, it will repeat infinitely and to turn off the loop you must toggle it back off.
 + 
 +
+
+# 2025-11-25 14:34:50.062067
++when the ! button is picked it will play the single clap sound 
++
++have an erase button for symbols in the terminal window 
++
++Make the buttons not look like it disappeared when clicked
++
++the when the loop button is toggled on the symbols on the terminal will be repeated infinitely, and then when user toogle it off it will stop the loop of beats
++
++
++
+
+# 2025-11-25 14:34:50.063815
++when the ! button is picked it will play the single clap sound 
++
++have an erase button for symbols in the terminal window 
++
++Make the buttons not look like it disappeared when clicked
++
++the when the loop button is toggled on the symbols on the terminal will be repeated infinitely, and then when user toogle it off it will stop the loop of beats
++
++
++
