@@ -22,6 +22,7 @@ export default function BeatButtons() {
     0: "https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3",
     1: "https://s3.amazonaws.com/freecodecamp/drums/Brk_Snr.mp3",
     2: "https://s3.amazonaws.com/freecodecamp/drums/Give_us_a_light.mp3",
+    3: "https://freesound.org/data/previews/341/341695_5121236-lq.mp3",
   };
   const playBeat = (index: number) => {
     const src = audioMap[index];
@@ -35,10 +36,10 @@ export default function BeatButtons() {
   };
 
   const handleClick = (index: number) => {
-    if (index === 3) { // Reset/Clear button
-      setComposition("");
-      setSelected([]);
-      setIsLooping(false);
+    if (index === 3) { // Clap button
+      // Play clap sound
+      playBeat(3);
+      setSelected([index]);
       return;
     }
     // Pre‑initialize audio for the first user click on a symbol button
