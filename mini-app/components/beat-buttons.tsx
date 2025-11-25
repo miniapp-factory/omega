@@ -17,7 +17,7 @@ export default function BeatButtons() {
 
   // Placeholder audio files located in /public
   const audioMap: Record<number, string> = {
-    0: "https://s3.amazonaws.com/freecodecamp/drums/Punchy_Kick_1.mp3",
+    0: "https://s3.amazonaws.com/freecodecamp/drums/D4_Kick_1.mp3",
     1: "https://s3.amazonaws.com/freecodecamp/drums/Brk_Snr.mp3",
     2: "https://s3.amazonaws.com/freecodecamp/drums/Give_us_a_light.mp3",
   };
@@ -55,10 +55,10 @@ export default function BeatButtons() {
 
   return (
     <div className="flex flex-col h-full">
-      <div className="bg-gray-900 text-green-400 p-4 rounded mb-4 w-full h-3/5 overflow-auto font-mono">
+      <div className="bg-gray-900 text-green-400 p-4 rounded mb-4 w-full h-[60vh] overflow-auto font-mono whitespace-pre-wrap">
         {composition || <span className="text-gray-500">No beats yet.</span>}
       </div>
-      <div className="grid grid-cols-4 gap-2 h-2/5">
+      <div className="grid grid-cols-4 gap-2 h-[40vh]">
         {[...Array(4)].map((_, i) => (
           <Button
             key={i}
