@@ -47,7 +47,7 @@ export default function BeatButtons() {
       }
     }
     setSelected([index]);
-    setComposition(prev => prev + labels[index] + " ");
+    setComposition(prev => prev + labels[index]);
   };
 
   const handleExecute = async () => {
