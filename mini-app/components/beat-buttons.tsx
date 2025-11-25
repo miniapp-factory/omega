@@ -88,7 +88,7 @@ export default function BeatButtons() {
           onClick={handleExecute}
           disabled={isPlaying || !composition.trim()}
         >
-          ▶️
+          >
         </Button>
       </div>
     </div>
