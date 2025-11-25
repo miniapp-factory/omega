@@ -69,6 +69,7 @@ export default function BeatButtons() {
   const loopPlay = async () => {
     if (!isLooping) return;
     await handleExecute();
+    if (!isLooping) return; // stop immediately if loop was cancelled
     loopPlay();
   };
 
