@@ -7,7 +7,7 @@ export default function BeatButtons() {
   const [selected, setSelected] = useState<number[]>([]);
   const [composition, setComposition] = useState<string>("");
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
-  const [isLooping, setIsLooping] = useState<boolean>(false);
+  // isLooping state removed – loop functionality is no longer supported
   const audioElements = useRef<Record<number, HTMLAudioElement>>({});
   const labels = [
     "{",   // Kick/Bass Drum
@@ -68,21 +68,9 @@ export default function BeatButtons() {
     setIsPlaying(false);
   };
 
-  const loopPlay = async () => {
-    if (!isLooping) return;
-    await handleExecute();
-    if (!isLooping) return; // stop immediately if loop was cancelled
-    loopPlay();
-  };
+  // loopPlay function removed – loop functionality is no longer supported
 
-  const toggleLoop = () => {
-    if (isLooping) {
-      setIsLooping(false);
-    } else {
-      setIsLooping(true);
-      loopPlay();
-    }
-  };
+  // toggleLoop function removed – loop functionality is no longer supported
 
   return (
     <div className="flex flex-col h-full">
@@ -101,18 +89,7 @@ export default function BeatButtons() {
               {labels[i]}
             </Button>
           ))}
-          <Button
-            variant="outline"
-            className="border-emerald-600 bg-black w-10 h-10"
-            onClick={() => {
-              setComposition("");
-              setSelected([]);
-              setIsLooping(false);
-            }}
-            disabled={isPlaying}
-          >
-            Erase
-          </Button>
+          {/* Erase button moved to right group */}
         </div>
         <div className="flex gap-2">
           <Button
@@ -123,14 +100,7 @@ export default function BeatButtons() {
           >
             {'>'}
           </Button>
-          <Button
-            variant="outline"
-            className="border-emerald-600 bg-black w-10 h-10"
-            onClick={toggleLoop}
-            disabled={isPlaying || !composition.trim()}
-          >
-            ⟳
-          </Button>
+          {/* Loop button removed */}
         </div>
       </div>
     </div>
