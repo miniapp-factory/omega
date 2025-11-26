@@ -24,6 +24,23 @@ export default function BeatButtons() {
     2: "https://s3.amazonaws.com/freecodecamp/drums/Give_us_a_light.mp3",
     3: "https://s3.amazonaws.com/freecodecamp/clap.mp3",
   };
+  function playClapSound() {
+    const audioCtx = new (window.AudioContext || (window as any).webkitAudioContext)();
+    const bufferSize = 2 * audioCtx.sampleRate;
+    const noiseBuffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+    const output = noiseBuffer.getChannelData(0);
+    for (let i = 0; i < bufferSize; i++) {
+      output[i] = Math.random() * 2 - 1;
+    }
+    const noise = audioCtx.createBufferSource();
+    noise.buffer = noiseBuffer;
+    const gain = audioCtx.createGain();
+    noise.connect(gain);
+    gain.connect(audioCtx.destination);
+    gain.gain.setValueAtTime(1, audioCtx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.2);
+    noise.start();
+  }
   const playBeat = (index: number) => {
     const src = audioMap[index];
     if (!src) return;
@@ -57,7 +74,7 @@ export default function BeatButtons() {
   const handleExecute = async () => {
     if (isPlaying || !composition.trim()) return;
     setIsPlaying(true);
-    const symbols = composition.trim().match(/(\{|\;|\/\/|!)/g) ?? [];
+    const symbols = composition.trim().match(/(\{|\;|\/\/|\/\*)/g) ?? [];
     for (const sym of symbols) {
       const idx = labels.indexOf(sym);
       if (idx !== -1) {
