@@ -13,7 +13,7 @@ export default function BeatButtons() {
     "{",   // Kick/Bass Drum
     ";",   // Snare/Rhythm
     "//",   // Hi‑Hat/Effect
-    "clap",   // Clap sound
+    "/*",   // Clap
   ];
 
 
@@ -22,7 +22,6 @@ export default function BeatButtons() {
     0: "https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3",
     1: "https://s3.amazonaws.com/freecodecamp/drums/Brk_Snr.mp3",
     2: "https://s3.amazonaws.com/freecodecamp/drums/Give_us_a_light.mp3",
-    3: "https://s3.amazonaws.com/freecodecamp/clap.mp3",
   };
   function playClapSound() {
     const audioCtx = new (window.AudioContext || (window as any).webkitAudioContext)();
