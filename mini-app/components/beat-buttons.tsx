@@ -64,7 +64,6 @@ export default function BeatButtons() {
         audioElements.current[index] = new Audio(src);
       }
     }
-    setSelected([index]);
     setComposition(prev => prev + labels[index]);
   };
 
