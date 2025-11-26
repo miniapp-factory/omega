@@ -532,3 +532,17 @@
 +make the "!" button have a freesound/clap,single.5wav sound 
 +
 +reposition the run button to the right side at the top
+
+# 2025-11-26 00:07:23.469103
++delete the idea of a loop button 
++
++make the erase button have a symbol logo and move it beside the run button
++
++Please modify the application code to play a single, crisp 'clap' sound effect when the user click the ! button. The audio should be a short, high-quality, singular hand clap sound.
+
+# 2025-11-26 00:07:23.469714
++delete the idea of a loop button 
++
++make the erase button have a symbol logo and move it beside the run button
++
++Please modify the application code to play a single, crisp 'clap' sound effect when the user click the ! button. The audio should be a short, high-quality, singular hand clap sound.
