@@ -100,6 +100,17 @@ export default function BeatButtons() {
           >
             {'>'}
           </Button>
+          <Button
+            variant="outline"
+            className="border-emerald-600 bg-black w-10 h-10"
+            onClick={() => {
+              setComposition("");
+              setSelected([]);
+            }}
+            disabled={isPlaying}
+          >
+            ✖
+          </Button>
           {/* Loop button removed */}
         </div>
       </div>
