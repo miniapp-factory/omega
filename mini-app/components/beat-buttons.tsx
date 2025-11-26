@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { useState, useRef } from "react";
 
 export default function BeatButtons() {
-  const [selected, setSelected] = useState<number[]>([]);
   const [composition, setComposition] = useState<string>("");
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   // isLooping state removed – loop functionality is no longer supported
@@ -24,7 +23,7 @@ export default function BeatButtons() {
     2: "https://s3.amazonaws.com/freecodecamp/drums/Give_us_a_light.mp3",
   };
   function playClapSound() {
-    const audioCtx = new (window.AudioContext || (window as any).webkitAudioContext)();
+    const audioCtx = new (window.AudioContext || (window as unknown as { webkitAudioContext?: typeof AudioContext }).webkitAudioContext)!();
     const bufferSize = 2 * audioCtx.sampleRate;
     const noiseBuffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
     const output = noiseBuffer.getChannelData(0);
@@ -55,7 +54,6 @@ export default function BeatButtons() {
     if (index === 3) { // Clap button
       // Play clap sound
       playClapSound();
-      setSelected([index]);
       setComposition(prev => prev + labels[index]); // added to display in terminal
       return;
     }
@@ -121,7 +119,6 @@ export default function BeatButtons() {
             className="border-emerald-600 bg-black w-10 h-10"
             onClick={() => {
               setComposition("");
-              setSelected([]);
             }}
             disabled={isPlaying}
           >
