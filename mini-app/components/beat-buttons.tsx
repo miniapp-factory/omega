@@ -55,7 +55,7 @@ export default function BeatButtons() {
   const handleClick = (index: number) => {
     if (index === 3) { // Clap button
       // Play clap sound
-      playBeat(3);
+      playClapSound();
       setSelected([index]);
       setComposition(prev => prev + labels[index]); // added to display in terminal
       return;
