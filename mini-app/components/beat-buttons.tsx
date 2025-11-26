@@ -52,8 +52,6 @@ export default function BeatButtons() {
 
   const handleClick = (index: number) => {
     if (index === 3) { // Clap button
-      // Play clap sound
-      playClapSound();
       setComposition(prev => prev + labels[index]); // added to display in terminal
       return;
     }
@@ -70,12 +68,15 @@ export default function BeatButtons() {
   const handleExecute = async () => {
     if (isPlaying || !composition.trim()) return;
     setIsPlaying(true);
-    playClapSound();
     const symbols = composition.trim().match(/(\{|\;|\/\/|\/\*)/g) ?? [];
     for (const sym of symbols) {
       const idx = labels.indexOf(sym);
       if (idx !== -1) {
-        playBeat(idx);
+        if (idx === 3) {
+          playClapSound();
+        } else {
+          playBeat(idx);
+        }
         await new Promise(res => setTimeout(res, 600)); // 600ms between beats
       }
     }
