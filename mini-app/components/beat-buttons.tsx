@@ -13,7 +13,7 @@ export default function BeatButtons() {
     "{",   // Kick/Bass Drum
     ";",   // Snare/Rhythm
     "//",   // Hi‑Hat/Effect
-    "!",   // Reset/Clear
+    "clap",   // Clap sound
   ];
 
 
