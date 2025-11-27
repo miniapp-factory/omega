@@ -50,6 +50,13 @@ export default function BeatButtons() {
     audio.play();
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      handleExecute();
+    }
+  };
+
   const handleClick = (index: number) => {
     if (index === 3) { // Clap button
       setComposition(prev => prev + labels[index]); // added to display in terminal
@@ -88,9 +95,14 @@ export default function BeatButtons() {
   // toggleLoop function removed – loop functionality is no longer supported
 
   return (
-    <div className="flex flex-col h-full">
-      <div className="bg-black text-green-400 p-4 rounded mt-16 mb-4 w-full h-[60vh] overflow-auto font-mono whitespace-pre-wrap">
-        {composition || <span className="text-gray-500">No beats yet.</span>}
+    <div className="flex flex-col h-full" tabIndex={0} onKeyDown={handleKeyDown}>
+      <div className="flex">
+        <pre className="text-gray-500 pr-2 text-right w-8">
+          {composition.split('\n').map((_, i) => `${i + 1}\n`).join('')}
+        </pre>
+        <div className="bg-black text-green-400 p-4 rounded mt-16 mb-4 w-full h-[60vh] overflow-auto font-mono whitespace-pre-wrap">
+          {composition || <span className="text-gray-500">No beats yet.</span>}
+        </div>
       </div>
       <div className="fixed top-0 left-0 w-full flex justify-between items-center gap-2 p-2 bg-black z-10">
         <div className="flex gap-2">
